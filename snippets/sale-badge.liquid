@@ -11,9 +11,9 @@
 -%}
 
 <div
-  id="price-container-{{ target.id }}"
+  id="{{ target.id }}"
 >
-  {%- if compare_at_price > price -%}
+  {%- if compare_at_price > price and available -%}
     On Sale!
   {%- endif -%}
 </div>
