@@ -4,4 +4,8 @@
   else
     assign target = product
   endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
 -%}
+<div>On Sale {{ compare_at_price }} {{ price }}</div>
