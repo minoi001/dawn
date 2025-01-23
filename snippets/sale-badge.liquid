@@ -25,9 +25,9 @@
 -%}
 
 <div id="{{ target.id }}" class="container">
-  <span class="sale-badge {%- unless compare_at_price > price and available -%}hidden{%- endunless -%}">
-      On Sale
-  </span>
+  {%- if compare_at_price > price and available -%}
+    <span class="sale-badge">On Sale</span>
+  {%- endif -%}
 </div>
 
 <style>
@@ -43,9 +43,5 @@
     padding: 5px 10px;
     font-weight: bold;
     text-transform: uppercase;
-  }
-
-  .hidden {
-    visibility: hidden;
   }
 </style>
