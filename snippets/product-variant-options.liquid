@@ -20,8 +20,6 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
-{% render 'sale-badge', product: product %}
-
 {%- for value in option.values -%}
   {%- liquid
     assign swatch_focal_point = null
