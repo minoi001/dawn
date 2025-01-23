@@ -1,29 +1,3 @@
-{% comment %}
-  Renders product variant options
-
-  Accepts:
-  - product: {Object} Product Liquid object (optional)
-  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
-
-  Usage:
-  {% render 'sale-badge',
-    product: product,
-    use_variant: boolean,
-  %}
-{% endcomment %}
-
-{%- liquid
-  if use_variant
-    assign target = product.selected_or_first_available_variant
-  else
-    assign target = product
-  endif
-
-  assign compare_at_price = target.compare_at_price
-  assign price = target.price
-  assign available = target.available
--%}
-
 <div id="{{ target.id }}" class="price-container">
   {%- if compare_at_price > price and available -%}
     <span class="sale-badge">On Sale</span>
@@ -53,18 +27,20 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    animation: fadeIn 0.3s ease-in-out;
+    opacity: 0; /* Start fully hidden */
+    transform: translateY(10px); /* Start slightly below */
+    animation: fadeInSmooth 0.5s ease-out forwards; /* Smooth fade-in */
   }
 
-  /* Keyframe for a subtle fade-in animation */
-  @keyframes fadeIn {
+  /* Refined Keyframe for Smoothness */
+  @keyframes fadeInSmooth {
     from {
       opacity: 0;
-      transform: translateY(-5px);
+      transform: translateY(10px); /* Slightly below */
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0); /* Settle into position */
     }
   }
 </style>
