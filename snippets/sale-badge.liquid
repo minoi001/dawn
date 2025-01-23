@@ -27,6 +27,8 @@
 <div id="{{ target.id }}" class="price-container">
   {%- if compare_at_price > price and available -%}
     <span class="sale-badge">On Sale</span>
+  {%- else -%}
+    <span class="sale-badge-placeholder"></span>
   {%- endif -%}
 </div>
 
@@ -53,20 +55,14 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    opacity: 0; /* Start fully hidden */
-    transform: translateY(10px); /* Start slightly below */
-    animation: fadeInSmooth 0.5s ease-out forwards; /* Smooth fade-in */
   }
 
-  /* Refined Keyframe for Smoothness */
-  @keyframes fadeInSmooth {
-    from {
-      opacity: 0;
-      transform: translateY(10px); /* Slightly below */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0); /* Settle into position */
-    }
+  /* Placeholder for Consistent Line Height */
+  .sale-badge-placeholder {
+    display: inline-block;
+    visibility: hidden; /* Invisible but takes up space */
+    padding: 5px 10px; /* Matches badge padding */
+    font-size: 14px; /* Matches badge font size */
+    line-height: 1; /* Matches badge line height */
   }
 </style>
