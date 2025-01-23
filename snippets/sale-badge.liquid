@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options
+  Renders on sale badge
 
   Accepts:
   - product: {Object} Product Liquid object (optional)
@@ -33,36 +33,31 @@
 </div>
 
 <style>
-  /* General Container Styling */
   .price-container {
     display: inline-block;
-    margin: 10px 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
     text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
   }
 
-  /* Sale Badge Styling */
-  .sale-badge {
-    display: inline-block;
-    background-color: #e63946; /* Modern red for sale */
-    color: #ffffff; /* White text for contrast */
-    padding: 5px 10px;
-    border-radius: 20px; /* Rounded badge */
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  }
-
-  /* Placeholder for Consistent Line Height */
+  .sale-badge,
   .sale-badge-placeholder {
     display: inline-block;
-    visibility: hidden; /* Invisible but takes up space */
-    padding: 5px 10px; /* Matches badge padding */
-    font-size: 14px; /* Matches badge font size */
-    line-height: 1; /* Matches badge line height */
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .sale-badge {
+    background-color: #e63946;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .sale-badge-placeholder {
+    visibility: hidden;
   }
 </style>
