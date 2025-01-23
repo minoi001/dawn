@@ -96,7 +96,7 @@
                 >
                   {{- block.settings.text -}}
                 </p>
-              {% when 'sale' %}
+              {% when true %}
                 {%- render 'sale-badge', product: product, use_variant: true -%}
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
