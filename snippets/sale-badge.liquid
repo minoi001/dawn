@@ -10,26 +10,10 @@
   assign available = target.available
 -%}
 
-<div>
-  Compare at Price: {{ compare_at_price }}
-  Price: {{ price }}
-  Available: {{ available }}
-  Selected Variant: {{ target.id }}
-</div>
-
-
 <div
-  class="price {{ price_class }} {%- if compare_at_price > price %} price--on-sale{% endif -%}"
-  id="price-container-{{ section.id }}"
-  data-price="{{ price }}"
-  data-compare-at-price="{{ compare_at_price }}"
-  data-available="{{ available }}"
+  id="price-container-{{ target.id }}"
 >
-  <div class="price__container">
-    {%- if compare_at_price > price -%}
-      <div class="price__sale">
-        <span class="price-item price-item--sale">{{ price | money }}</span>
-      </div>
-    {%- endif -%}
-  </div>
+  {%- if compare_at_price > price -%}
+    On Sale!
+  {%- endif -%}
 </div>
