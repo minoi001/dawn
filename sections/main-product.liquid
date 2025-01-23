@@ -108,11 +108,10 @@
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'sale-badge', product: product, use_variant: true -%}
-
                   {%- render 'price',
                     product: product,
                     use_variant: true,
-                    show_badges: true,
+                    show_badges: false,
                     price_class: 'price--large'
                   -%}
                 </div>
