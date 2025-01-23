@@ -18,14 +18,28 @@
 <div
   class="
     price
+    {%- if available == false %} price--sold-out{% endif -%}
     {%- if compare_at_price > price %} price--on-sale{% endif -%}
   "
+  data-price="{{ price | money }}"
+  data-compare-at-price="{{ compare_at_price | money }}"
+  data-available="{{ available }}"
 >
   <div class="price__container">
     {%- if compare_at_price > price -%}
-      <div class="price__sale">On Sale</div>
+      <div class="price__sale">
+        On Sale <span class="price-item price-item--sale">{{ compare_at_price | money }}</span>
+      </div>
+      <div class="price__regular">
+        <span class="price-item price-item--regular">
+          <s>{{ price | money }}</s>
+        </span>
+      </div>
+    {%- else -%}
+      <div class="price__regular">
+        <span class="price-item price-item--regular">{{ price | money }}</span>
+      </div>
     {%- endif -%}
   </div>
 </div>
-
 
