@@ -2,13 +2,18 @@
   Renders product variant options
 
   Accepts:
-  - product: {Object} Product Liquid object (optional)
-  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
 
   Usage:
-  {% render 'sale-badge',
+  {% render 'product-variant-options',
     product: product,
-    use_variant: boolean,
+    option: option,
+    block: block
+    picker_type: picker_type
   %}
 {% endcomment %}
 {%- liquid
