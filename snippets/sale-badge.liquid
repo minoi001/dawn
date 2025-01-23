@@ -1,4 +1,7 @@
-{%-  liquid  if use_variant
+{%- liquid
+  if use_variant
     assign target = product.selected_or_first_available_variant
-endif   
+  else
+    assign target = product
+  endif
 -%}
