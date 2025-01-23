@@ -58,6 +58,8 @@
     </span>
   {%- endcapture -%}
 
+  {% render 'sale-badge', product: product %}
+
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
       <span class="visually-hidden">{{ value | escape }}</span>
