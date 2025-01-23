@@ -10,9 +10,7 @@
   assign available = target.available
 -%}
 
-<div
-  id="{{ target.id }}"
->
+<div id="{{ target.id }}">
   {%- if compare_at_price > price and available -%}
     On Sale!
   {%- endif -%}
