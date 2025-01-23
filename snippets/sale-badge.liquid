@@ -8,4 +8,6 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
 -%}
+{%  if compare_at_price < price %}
 <div>On Sale {{ compare_at_price }} {{ price }}</div>
+{%  endif %}
