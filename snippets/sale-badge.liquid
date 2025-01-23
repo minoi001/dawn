@@ -22,15 +22,6 @@
       <div class="price__sale">
         <span class="price-item price-item--sale">{{ price | money }}</span>
       </div>
-      <div class="price__regular">
-        <span class="price-item price-item--regular">
-          <s>{{ compare_at_price | money }}</s>
-        </span>
-      </div>
-    {%- else -%}
-      <div class="price__regular">
-        <span class="price-item price-item--regular">{{ price | money }}</span>
-      </div>
     {%- endif -%}
   </div>
 </div>
