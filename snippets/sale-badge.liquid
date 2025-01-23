@@ -26,27 +26,10 @@
 >
   <div class="price__container">
     {%- if compare_at_price > price -%}
-      <div class="price__sale">
-        <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="price-item price-item--sale price-item--last">{{ money_price }}</span>
-      </div>
-      <div class="price__regular">
-        <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">
-          <s>{{ money_compare_at_price }}</s>
-        </span>
-      </div>
-    {%- else -%}
-      <div class="price__regular">
-        <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">{{ money_price }}</span>
+      <div>
+      On Sale
       </div>
     {%- endif -%}
   </div>
 
-  {%- if available == false -%}
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
-    </span>
-  {%- endif -%}
 </div>
