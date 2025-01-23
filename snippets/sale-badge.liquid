@@ -10,6 +10,11 @@
   assign available = target.available
 -%}
 
+{% style %}
+
+  
+  {% endstyle %}
+
 <div
   class="
     price
@@ -18,7 +23,9 @@
 >
   <div class="price__container">
     {%- if compare_at_price > price -%}
-      <div>On Sale</div>
+      <div class="price__sale">On Sale</div>
     {%- endif -%}
   </div>
 </div>
+
+
