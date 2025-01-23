@@ -106,8 +106,9 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                {%- render 'sale-badge', product: product, use_variant: true -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'sale-badge', product: product, use_variant: true -%}
+
                   {%- render 'price',
                     product: product,
                     use_variant: true,
